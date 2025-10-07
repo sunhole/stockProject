@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+struct Stock: Codable {
+    let symbol: String
+    let name: String
+    let price: Double
+    let change: Double
+    let chagePercentage: Double 
+}
