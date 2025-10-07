@@ -49,7 +49,8 @@ class StockListViewController: UIViewController {
         // 테이블 뷰 셀 탭 이벤트 처리
         tableView.rx.modelSelected(Stock.self)
             .subscribe(onNext: { stock in
-                print("Selected stock: \(stock.name)")
+                let detailVC = StockDetailViewController(stock: stock)
+                self.navigationController?.pushViewController(detailVC, animated: true)
             })
             .disposed(by: disposeBag)
     }
